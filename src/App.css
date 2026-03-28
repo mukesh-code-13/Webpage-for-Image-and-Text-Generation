@@ -1,0 +1,242 @@
+:root {
+  color-scheme: dark;
+  color: #111827;
+  background: #f8fafc;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at top, #eef2ff 0%, #f8fafc 55%, #ffffff 100%);
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.main-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  background: rgba(79, 70, 229, 0.1);
+  border: 1px solid rgba(79, 70, 229, 0.15);
+  border-radius: 20px;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.35rem;
+  color: #6366f1;
+}
+
+.brand-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #4338ca;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.panel {
+  background: #ffffff;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 24px;
+  box-shadow: 0 24px 80px rgba(99, 102, 241, 0.08);
+  padding: 28px;
+}
+
+.panel-info {
+  margin-top: 24px;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: clamp(2rem, 2.5vw, 2.4rem);
+  color: #3730a3;
+}
+
+p {
+  line-height: 1.75;
+  color: #4b5563;
+}
+
+.tab-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  background: #eef2ff;
+  color: #4338ca;
+  padding: 0.75rem 1.2rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.tab:hover,
+.tab.active {
+  background: #4338ca;
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.panel-card {
+  margin-top: 16px;
+}
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(15, 23, 42, 0.18);
+  backdrop-filter: blur(6px);
+  z-index: 50;
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  color: #4338ca;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.input-group,
+.analysis-box,
+.result-section {
+  background: #f8fafc;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 1.25rem;
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #4338ca;
+}
+
+textarea,
+input[type='text'],
+input[type='file'] {
+  width: 100%;
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  border-radius: 16px;
+  padding: 1rem;
+  font-size: 1rem;
+  background: #ffffff;
+  color: #111827;
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+button {
+  border: none;
+  border-radius: 14px;
+  padding: 0.95rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button.primary {
+  background: #4f46e5;
+  color: white;
+  box-shadow: 0 18px 40px rgba(79, 70, 229, 0.18);
+}
+
+button.primary:hover {
+  transform: translateY(-1px);
+}
+
+button.secondary {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+button.secondary:hover {
+  background: #e0e7ff;
+}
+
+.status-message {
+  margin-top: 0.75rem;
+  color: #6b7280;
+}
+
+.image-preview {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  max-height: 420px;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.metadata-card {
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(99, 102, 241, 0.12);
+  padding: 1rem;
+}
+
+.metadata-card strong {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #3730a3;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 860px) {
+  .panel-card {
+    padding: 1rem;
+  }
+}
